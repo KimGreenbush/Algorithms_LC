@@ -22,6 +22,12 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 */
 
+/*
+Notes on initializing and updating "mid":
+Initialized outside the loop => update **after** if/else left/right search.
+Initialized inside the loop => update **before**(obviously) if/else left/right search.
+*/
+
 using System;
 namespace BinarySearch_704
 {
@@ -37,7 +43,7 @@ namespace BinarySearch_704
 
                 while (start <= end)
                 {
-                    // this way of finding a mid prevents number overflow
+                    // this way of finding a mid prevents number overflow vs (left + right)/2
                     int mid = start + (end - start) / 2;
                     if (target == nums[mid]) return mid;
                     if (target < nums[mid]) end = mid - 1;

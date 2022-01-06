@@ -23,11 +23,17 @@ Constraints:
 1 <= bad <= n <= 231 - 1
 */
 
+/*
+Notes on initializing and updating "mid":
+Initialized outside the loop => update **after** if/else left/right search.
+Initialized inside the loop => update **before**(obviously) if/else left/right search.
+*/
+
 using System;
 
 namespace FirstBadVersion_278
 {
-    class Program : VersionControl
+    class Program
     {
         static void Main(string[] args)
         {

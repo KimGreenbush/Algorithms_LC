@@ -9,11 +9,14 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
+            // update url string to working folder when debugging.
+            // "${workspaceFolder}/{{updateHere}}/bin/Debug/net5.0/
             "program": "${workspaceFolder}/BinarySearch_704/bin/Debug/net5.0/BinarySearch_704.dll",
             "args": [],
             "cwd": "${workspaceFolder}/BinarySearch_704",
             "console": "internalConsole",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "requireExactSource": false
         },
         {
             "name": ".NET Core Attach",
