@@ -45,21 +45,13 @@ namespace SearchInsertPosition_35
                     // this way of finding a mid prevents number overflow vs (left + right)/2
                     int mid = left + (right - left) / 2;
                     if (nums[mid] == target) return mid;
-                    if (nums[mid] > target)
-                    {
-                        right = mid - 1;
-                    }
-                    else
-                    {
-                        left = mid + 1;
-                    }
+                    if (nums[mid] > target) right = mid - 1;
+                    else left = mid + 1;
 
                     // when down to two comparisons, if left and right are neighbors and left is smaller than target and right is larger than target, return the right index value
-                    if (right - left == 1 && nums[left] < target && nums[right] > target)
-                    {
-                        return right;
-                    }
+                    if (right - left == 1 && nums[left] < target && nums[right] > target) return right;
                 }
+
                 // if array is empty this returns 0 (left is 0 and right would equal -1 since the lenght is 0 - 1) or the target value would be inserted after the final index (loop exits once left is passed right indicating the insertion point is outside the array)
                 return left;
             }
